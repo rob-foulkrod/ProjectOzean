@@ -105,7 +105,7 @@ stages:
                     deployToSlotOrASE: true
                     ResourceGroupName: $(resourceGroup)
                     SlotName: "test"
-                    packageForLinux: "$(Agent.BuildDirectory)/app/web.zip"
+                    packageForLinux: "$(Agent.BuildDirectory)/app/Web.zip"
 
   - stage: deployToProd
     condition: and(succeeded(), eq(variables.isMain, 'true'))
@@ -124,4 +124,4 @@ stages:
                     azureSubscription: $(subscription)
                     appType: "webAppLinux"
                     WebAppName: $(webAppName)
-                    packageForLinux: "$(Agent.BuildDirectory)/app/web.zip"
+                    packageForLinux: "$(Agent.BuildDirectory)/app/Web.zip"
